@@ -20,6 +20,9 @@ There are some stuff left around to take a look and discover, I am not gonna go 
 - The implant generates a DLL with an export called DiagnosisCheck, to generate shellcode I have provided a modified sRDI which you can simply use by running  
 python3 ConvertToShellcode.py -c -f DiagnosisCheck NamelessImplant.dll  
 - Make sure you check in the implant the kill date, change the hardcoded IPs/Domains. 
+- Coming form PoshC2, this C2 has a similar way of obtaining the output. When the server will start,  
+it will generate a NamelessLog.txt which you can tail command to obtain and keep up with everything  
+tail -f NamelessLog.txt
 
 ## Credits
 - thanks to https://x.com/_yamakadi for his amazing work on the Clroxide that executes assemblies.
