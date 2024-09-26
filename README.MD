@@ -22,7 +22,8 @@ python3 ConvertToShellcode.py -c -f DiagnosisCheck NamelessImplant.dll
 - Make sure you check in the implant the kill date, change the hardcoded IPs/Domains. 
 - Coming form PoshC2, this C2 has a similar way of obtaining the output. When the server will start,  
 it will generate a NamelessLog.txt which you can tail command to obtain and keep up with everything  
-tail -f NamelessLog.txt
+tail -f NamelessLog.txt  
+- For the Rust gurus, you will notice stupid choices in the code that make absolutely no sense and I agree but I suck at Rust ¯\_(ツ)_/¯  
 
 ## Credits
 - thanks to https://x.com/_yamakadi for his amazing work on the Clroxide that executes assemblies.
