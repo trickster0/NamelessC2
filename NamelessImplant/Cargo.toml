@@ -1,0 +1,48 @@
+[package]
+name = "NamelessImplant"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+opt-level = "z"     # Optimize for size.
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = true        # Automatically strip symbols from the binary.
+
+[dependencies]
+whoami = "1.4.0"
+rust-crypto = "0.2.36"
+base64 = "0.21.0"
+chrono = "0.4.24"
+sysinfo = "0.29.4"
+obfstr = "0.3.0"
+backtrace = "0.3.68"
+com = "0.6.0"
+clroxide = {path = "clroxide/"}
+
+[dependencies.windows-sys]
+version = "0.45.0"
+features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Kernel",
+    "Win32_System_WindowsProgramming",
+    "Win32_System_SystemServices",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_SystemInformation",
+    "Win32_System_Memory",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_System_Com",
+    "Win32_System_Diagnostics_ToolHelp",
+]
+
+[lib]
+crate-type = ["cdylib"]
+

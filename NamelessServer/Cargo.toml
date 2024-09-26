@@ -1,0 +1,18 @@
+[package]
+name = "NamelessServer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+#libssl-dev libsqlite3-dev for installation
+
+[dependencies]
+actix-web = { version = "4", features = ["openssl"] }
+rusqlite = "0.29.0"
+serde = { version = "1.0.130", features = ["derive"] }
+serde_json = "1.0.66"
+openssl = "0.10.48"
+chrono = "0.4.24"
+rust-crypto = "0.2.36"
+base64 = "0.21.0"
+hex = "0.4.3"

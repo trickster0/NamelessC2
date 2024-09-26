@@ -1,0 +1,38 @@
+[package]
+name = "clroxide"
+authors = ["KY <me@yamakadi.com>"]
+description = "A library that allows you to host the CLR and execute dotnet binaries."
+edition = "2021"
+homepage = "https://github.com/yamakadi/clroxide"
+documentation = "https://docs.rs/clroxide"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/yamakadi/clroxide"
+version = "1.1.1"
+exclude = ["/test"]
+
+[profile.release]
+opt-level = "z"     # Optimize for size.
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = true        # Automatically strip symbols from the binary.
+
+[lib]
+crate-type = ["lib", "staticlib"]
+
+[features]
+default = ["default-loader"]
+default-loader = ["windows/Win32_System_LibraryLoader"]
+debug = []
+
+[dependencies]
+windows = { version = "0.46.0", features = ["Win32_System_Com", "Win32_Foundation", "Win32_System_Ole"] }
+
+[dev-dependencies]
+windows = { version = "0.46.0", features = ["Win32_System_Com", "Win32_Foundation", "Win32_System_Ole", "Win32_System_Memory"] }
+
+[package.metadata.docs.rs]
+all-features = false
+default-target = "x86_64-pc-windows-gnu"
+targets = ["x86_64-pc-windows-gnu", "x86_64-pc-windows-msvc"]
